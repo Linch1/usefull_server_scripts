@@ -28,5 +28,3 @@ os.system('sudo curl -L "https://github.com/docker/compose/releases/download/1.2
 os.system('sudo chmod +x /usr/local/bin/docker-compose')
 os.system('sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose')
 
-# downlaod github
-os.system('sudo apt install git -y')
