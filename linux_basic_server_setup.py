@@ -22,5 +22,11 @@ os.system('sudo apt-get update')
 os.system('sudo apt-get install docker-ce docker-ce-cli containerd.io -y')
 os.system('sudo docker run hello-world')
 
+# download docker-compose
+
+os.system('sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose')
+os.system('sudo chmod +x /usr/local/bin/docker-compose')
+os.system('sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose')
+
 # downlaod github
 os.system('sudo apt install git -y')
