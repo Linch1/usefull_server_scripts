@@ -1,8 +1,11 @@
 import os
 
+#update
+os.system('sudo apt-get update')
+os.system('sudo apt-get upgrade')
+
 # download dockers
 os.system('sudo apt-get remove docker docker-engine docker.io containerd runc')
-os.system('sudo apt-get update')
 os.system('sudo apt-get install \
     apt-transport-https \
     ca-certificates \
