@@ -44,3 +44,6 @@ RUN $url = ('https://www.python.org/ftp/python/{0}/python-{1}-amd64.exe' -f $env
 	pip --version; \
 	\
 	Write-Host 'Complete.';
+
+
+https://software-download.microsoft.com/pr/Win10_1909_Italian_x32.iso?t=2e53d658-33df-4a7d-9b9d-7da9618b2a3c&e=1576783257&h=64be75a7202d5973f69304754ca635f2
