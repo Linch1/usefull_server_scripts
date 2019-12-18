@@ -1,9 +1,1 @@
-FROM node:13-alpine
-RUN mkdir C:\Users\wihype_
-RUN mkdir C:\Users\wihype_\wihype
-WORKDIR C:\Users\wihype_\wihype
-RUN powershell -Command "(new-object System.Net.WebClient).DownloadFile('https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.0.0-alpha.20191030.exe','C:\Users\wihype_\wihype')"
-RUN tesseract-ocr-w32-setup-v5.0.0-alpha.20191030.exe
-RUN powershell -Command "Expand-Archive '<PathToZIPFile>' '<FolderWhereToExtract>'"
-
 
