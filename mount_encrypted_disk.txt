@@ -1,0 +1,6 @@
+mount encrypted disk
+
+1) udisksctl unlock -b /dev/ (sda5 my disk)
+2) sudo vgimportclone /dev/mapper/ (luks-bf73c509-ba1c-4021-870c-766ac50c3c5c my decrypted disk to mount)
+3) sudo vgchange -ay 
+4) udisksctl mount -b /dev/mapper/ (vgubuntu1-root my disk to mount)
