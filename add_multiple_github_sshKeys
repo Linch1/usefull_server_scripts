@@ -60,7 +60,7 @@ Clone you repo and modify your Git config
 ---------------------------------------------
 
 clone your repo
-	git clone git@github.com:activehacker/gfs.git gfs_jexchan
+	git clone git@github.com-activehacker:activehacker/gfs.git gfs_jexchan
 
 cd gfs_jexchan and modify git config
 
