@@ -1,0 +1,3 @@
+- bin/standalone.sh -c standalone-ha.xml -Djboss.socket.binding.port-offset=100
+
+- mvn clean install wildfly:deploy -Djboss-as.home=$KEYCLOAK_HOME -X
