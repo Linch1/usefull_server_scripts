@@ -1,6 +1,24 @@
 - bin/standalone.sh -c standalone-ha.xml -Djboss.socket.binding.port-offset=100
 
-- mvn clean install wildfly:deploy -Djboss-as.home=$KEYCLOAK_HOME -X
+- 
+
+# Deploy custom user storage spi
+
+
+#### Before deploying
+
+- Check that you have added the file **resources/META-INF/services/org.keycloak.storage.UserStorageProviderFactory** inside **resources/META-INF/services** ( create them if not present) that contains the Factory qualified name. Ex:
+```
+unoone.storage.main.DemoUserStorageProviderFactory
+```
+
+- If it has external dependencies not included in keycloak deploy it as an ear.
+
+#### Deplyment
+
+- Run the keycloak server
+- setup the $KEYCLOAK_HOME path variable that specify the keycloak server folder, ex: 
+- Go to the project folder in the terminal and type the cmd: **mvn clean install wildfly:deploy -X**
 
 # Allow keycloak public access
 - DOC: https://www.keycloak.org/docs/latest/server_installation/index.html#_setting-up-a-load-balancer-or-proxy
