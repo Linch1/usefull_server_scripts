@@ -1,3 +1,9 @@
+# Getting started
+
+- For start with keycloak cehck this guides
+	- [Introduction to keycloak](https://www.thomasvitale.com/introducing-keycloak-identity-access-management/)
+	- [Base setup of keycloak](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
+
 # Deploy custom user storage spi
 
 #### Before deploying
