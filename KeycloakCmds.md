@@ -3,6 +3,7 @@
 - mvn clean install wildfly:deploy -Djboss-as.home=$KEYCLOAK_HOME -X
 
 # Allow keycloak public access
+- DOC: https://www.keycloak.org/docs/latest/server_installation/index.html#_setting-up-a-load-balancer-or-proxy
 - edit *standalone-ha.xml* or *standalone.xml* following lines
 
 **Replace this**
@@ -32,7 +33,7 @@
 - Configure the authentication server to read the client’s IP address from X-Forwarded-For header.
 
 
-### Allow keycloak to read X-Forwarded-For header
+#### Allow keycloak to read X-Forwarded-For header ( HTTP ) 
 - open up the profile configuration file (*standalone.xml*, *standalone-ha.xml*, or *domain.xml* ) and add **proxy-address-forwarding=true** attribute to **http-listener**
 ```
 <subsystem xmlns="urn:jboss:domain:undertow:10.0">
@@ -45,4 +46,36 @@
    </server>
    ...
 </subsystem>
+```
+
+#### Enable HTTPS/SSL with a Reverse Proxy
+
+- Add the **redirect-socket** attribute to the **http-listener** element
+```
+<subsystem xmlns="urn:jboss:domain:undertow:10.0">
+    ...
+    <http-listener name="default" socket-binding="http"
+        proxy-address-forwarding="true" redirect-socket="proxy-https"/>
+    ...
+</subsystem>
+```
+
+- Then add a new **socket-binding** element to the **socket-binding-group** element:
+```
+<socket-binding-group name="standard-sockets" default-interface="public"
+    port-offset="${jboss.socket.binding.port-offset:0}">
+    ...
+    <socket-binding name="proxy-https" port="443"/>
+    ...
+</socket-binding-group>
+```
+
+#### VERIFY THE CONFIGURATION
+
+- go to **/auth/realms/master/.well-known/openid-configuration** ( _ex: ttps://myDomain.com/auth/realms/master/.well-known/openid-configuration_). This will show a JSON document listing a number of endpoints for Keycloak. Make sure the endpoints starts with the address (scheme, domain and port) of your reverse proxy or load balancer. By doing this you make sure that Keycloak is using the correct endpoint.
+
+
+- verify that Keycloak sees the correct source IP address for requests. To check this, you can try to login to the admin console with an invalid username and/or password and check the keyloak logs on the server, check that the value of **ipAddress** is the IP address of the machine you tried to login
+```
+08:14:21,287 WARN  XNIO-1 task-45 [org.keycloak.events] type=LOGIN_ERROR, realmId=master, clientId=security-admin-console, userId=8f20d7ba-4974-4811-a695-242c8fbd1bf8, ipAddress=X.X.X.X, error=invalid_user_credentials, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:8080/auth/admin/master/console/?redirect_fragment=%2Frealms%2Fmaster%2Fevents-settings, code_id=a3d48b67-a439-4546-b992-e93311d6493e, username=admin
 ```
