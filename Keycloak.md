@@ -1,9 +1,4 @@
-- bin/standalone.sh -c standalone-ha.xml -Djboss.socket.binding.port-offset=100
-
-- 
-
 # Deploy custom user storage spi
-
 
 #### Before deploying
 
@@ -14,10 +9,11 @@ unoone.storage.main.DemoUserStorageProviderFactory
 
 - If it has external dependencies not included in keycloak deploy it as an ear.
 
-#### Deplyment
+#### Deployment
 
-- Run the keycloak server
+- Run the keycloak server **bin/standalone.sh -c standalone.xml**
 - Go to the project folder in the terminal and type the cmd: **mvn clean install wildfly:deploy -X**
+- For a project example view [this demo](https://github.com/Linch1/Keycloak-user-storage-demo-mysql) that implements keycloak storage with mysql
 
 
 # Allow keycloak public access
