@@ -2,11 +2,10 @@
 
 - mvn clean install wildfly:deploy -Djboss-as.home=$KEYCLOAK_HOME -X
 
-#ALlow keycloak public access
-
+# Allow keycloak public access
 - edit *standalone-ha.xml* or *standalone.xml* following lines
 
-*Replace this*
+**Replace this**
 ```
 <interface name="management">
 	<inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
@@ -16,7 +15,7 @@
 </interface>
 ```
 
-*with this*
+**with this**
 ```
 <interface name="management">
 	<any-address/>
