@@ -17,8 +17,8 @@ unoone.storage.main.DemoUserStorageProviderFactory
 #### Deplyment
 
 - Run the keycloak server
-- setup the $KEYCLOAK_HOME path variable that specify the keycloak server folder, ex: 
 - Go to the project folder in the terminal and type the cmd: **mvn clean install wildfly:deploy -X**
+
 
 # Allow keycloak public access
 - DOC: https://www.keycloak.org/docs/latest/server_installation/index.html#_setting-up-a-load-balancer-or-proxy
