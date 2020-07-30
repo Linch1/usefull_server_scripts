@@ -14,7 +14,28 @@ If when you try to log to your app using keycloak appears the error **Invalid pa
 - Open the app client
 - add the url that you toke in the **Valid Redirect URIs** field.
 
+# Add roles
 
+### Add role
+1. go to keycloak admin panel
+2. Select the wanted realm
+3. Go to roles
+4. Click add role
+5. Specify the role name and save it
+
+### Add composite role
+This allow to create a role that implicitly contains the permissions of other roles too
+1. Once that you have saved te role check the _COMPOSITE ROLE_ field
+2. Add the roles that you want
+3. Now the role that you have created have also the other role permissions 
+
+### Default roles on user creation
+1. go to keycloak admin panel
+2. Select the wanted realm
+3. Go to roles
+4. Go to _DEFAULT ROLES_
+5. add the roles that you want
+6. From now all the newly created users will have the specified roles
 
 # Deploy custom user storage spi
 
