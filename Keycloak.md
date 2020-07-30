@@ -3,6 +3,15 @@
 - For start with keycloak cehck this guides
 	- [Introduction to keycloak](https://www.thomasvitale.com/introducing-keycloak-identity-access-management/)
 	- [Base setup of keycloak](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
+	
+#### Invalid redirect uri
+
+If when you try to log to your app using keycloak appears the error **Invalid parameter: redirect_uri**
+- Go to keycloak console
+- Check the _WARNING_ message of the invalid redirect and take the **redirect_uri** attribute _value_ ( it should be the last message if no other operationg have been done )
+- go to keycloak admin panel
+- Open the app client
+- add the url that you toke in the **Valid Redirect URIs** field.
 
 # Deploy custom user storage spi
 
