@@ -4,7 +4,7 @@
 	- [Introduction to keycloak](https://www.thomasvitale.com/introducing-keycloak-identity-access-management/)
 	- [Base setup of keycloak](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
 	
-(-Djboss.socket.binding.port-offset=100)
+(bin/standalone.bat -c standalone.xml -Djboss.socket.binding.port-offset=100)
 	
 #### Invalid redirect uri
 
