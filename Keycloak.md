@@ -4,6 +4,8 @@
 	- [Introduction to keycloak](https://www.thomasvitale.com/introducing-keycloak-identity-access-management/)
 	- [Base setup of keycloak](https://www.thomasvitale.com/keycloak-configuration-authentication-authorisation/)
 	
+(-Djboss.socket.binding.port-offset=100)
+	
 #### Invalid redirect uri
 
 If when you try to log to your app using keycloak appears the error **Invalid parameter: redirect_uri**
