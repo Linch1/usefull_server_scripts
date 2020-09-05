@@ -47,6 +47,14 @@ This allow to create a role that implicitly contains the permissions of other ro
 	- to make things easier you can directly copy-paste the _keycloak_ folder theme, it is an example of blank theme.
 4. Now that you have added you theme for make keycloak use it just go in **my_realm > realm settings > themes** and select the newly added theme
 
+### Add images in theme
+
+For add an image in a custom theme section ( acount/login/admin... ) you have to
+
+1. Add the image in the relative section ( acount/login/admin... ) _rources folder_
+	- Ex: go to **keycloak path/themes/custom theme/login/resources/img** and add the image
+2. When you call the image src for be displayed you have to type it in this way **${url.resourcePath}**/img/image.png
+
 # Deploy custom user storage spi
 #### Before deploying
 
