@@ -39,8 +39,15 @@ This allow to create a role that implicitly contains the permissions of other ro
 5. add the roles that you want
 6. From now all the newly created users will have the specified roles
 
-# Deploy custom user storage spi
+# Add theme
 
+1. Open the folder of the keycloak installation and go in the **themes** folder.
+2. By default you keycloak uses the theme in the _base_ folder, use this folder as guide for create your new theme
+3. For add a theme just create a new folder in the **themes** folder and name it as the name that you want to give to the theme.
+	- to make things easier you can directly copy-paste the _keycloak_ folder theme, it is an example of blank theme.
+4. Now that you have added you theme for make keycloak use it just go in **my_realm > realm settings > themes** and select the newly added theme
+
+# Deploy custom user storage spi
 #### Before deploying
 
 - Check that you have added the file **resources/META-INF/services/org.keycloak.storage.UserStorageProviderFactory** inside **resources/META-INF/services** ( create them if not present) that contains the Factory qualified name. Ex:
