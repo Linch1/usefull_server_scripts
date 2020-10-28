@@ -1,0 +1,3 @@
+sudo systemctl disable nodm
+sudo reboot
+sudo startx
