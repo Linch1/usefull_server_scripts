@@ -1,3 +1,6 @@
+- From SSH
 sudo systemctl disable nodm
 sudo reboot
+
+- From Raspberry
 sudo startx
