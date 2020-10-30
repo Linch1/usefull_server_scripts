@@ -45,6 +45,21 @@ cd tensorflow
 1) Global installation: `./configure`
 2) Virtual Env installation: `python configure.py`
 
+Configuration Answers:
+```
+location of python: SKIP
+Python library paths: SKIP
+OpenCL SYCL support: N
+Rocm support: N
+CUDA support: Y
+TensorRT support: N
+CUDA compute capabilities: SKIP
+CUDA compiler: N
+host compiler: SKIP
+optimization flags:  SKIP
+./WORKSPACE for Android builds: N
+```
+
 Configuration Example: 
 
 ```
