@@ -2,16 +2,18 @@ Source ( https://www.tensorflow.org/install/source )
 
 ### Setup
 
+```
 sudo apt install python3-dev python3-pip
-
 pip install -U --user pip numpy wheel
 pip install -U --user keras_preprocessing --no-deps
+```
 
 ### Install GPU support ( https://www.tensorflow.org/install/gpu#linux_setup )
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64`
 
 - check for new commands at ( https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=deblocal )
+```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
 sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
 wget https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda-repo-ubuntu2004-11-1-local_11.1.1-455.32.00-1_amd64.deb
@@ -19,8 +21,8 @@ sudo dpkg -i cuda-repo-ubuntu2004-11-1-local_11.1.1-455.32.00-1_amd64.deb
 sudo apt-key add /var/cuda-repo-ubuntu2004-11-1-local/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda
-
 sudo apt-get install nvidia-driver-450
+```
 
 ### Download Bazel 
 
@@ -29,10 +31,10 @@ sudo apt-get install nvidia-driver-450
 
 ### TensorFlow Setup
 
-git clone https://github.com/tensorflow/tensorflow.git
-cd tensorflow
-1) Global installation: ./configure
-2) Virtual Env installation: python configure.py
+`git clone https://github.com/tensorflow/tensorflow.git`
+`cd tensorflow`
+1) Global installation: `./configure`
+2) Virtual Env installation: `python configure.py`
 
 Configuration Example: 
 
