@@ -25,8 +25,10 @@ sudo apt-get -y install cuda
 
 ### Install Nvidia Drivers
 
-`sudo apt list nvidia-driver-*`
-`sudo apt install nvidia-driver-455`
+```
+sudo apt list nvidia-driver-*
+sudo apt install nvidia-driver-455
+```
 
 
 ### Download Bazel 
@@ -36,8 +38,10 @@ sudo apt-get -y install cuda
 
 ### TensorFlow Setup
 
-`git clone https://github.com/tensorflow/tensorflow.git`
-`cd tensorflow`
+```
+git clone https://github.com/tensorflow/tensorflow.git
+cd tensorflow
+```
 1) Global installation: `./configure`
 2) Virtual Env installation: `python configure.py`
 
