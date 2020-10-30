@@ -124,3 +124,12 @@ Preconfigured Bazel build configs to DISABLE default on features:
 Configuration finished
 ```
 
+### BUILD PIP PACKAGE TENSORFLOW
+
+- Add `--config=cuda` to the following command to use GPU support
+
+```
+bazel build [--config=option] //tensorflow/tools/pip_package:build_pip_package
+```
+
+
