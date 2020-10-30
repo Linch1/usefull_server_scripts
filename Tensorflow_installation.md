@@ -1,4 +1,27 @@
+Source ( https://www.tensorflow.org/install/pip ) 
+
+## Pip installation
+
+```
+pip install --upgrade tensorflow
+```
+
+Run in python this command for check tha tensorflow is correctly installer
+
+```
+import tensorflow as tf
+print(tf.__version__)
+```
+
+If some errors occurs try to do this steps listed below and try again
+- Install GPU support
+- Install Nvidia Drivers
+
+If it continue to fails follow also the others steps
+
 Source ( https://www.tensorflow.org/install/source ) 
+
+## Source Installation
 
 ### Setup
 
@@ -29,6 +52,10 @@ sudo apt-get -y install cuda
 sudo apt list nvidia-driver-*
 sudo apt install nvidia-driver-455
 ```
+
+### Checkpoint
+
+T
 
 
 ### Download Bazel 
@@ -130,6 +157,8 @@ Configuration finished
 
 ```
 bazel build [--config=option] //tensorflow/tools/pip_package:build_pip_package
+./bazel-bin/tensorflow/tools/pip_package/build_pip_package --nightly_flag /tmp/tensorflow_pkg
+pip install /tmp/tensorflow_pkg/tensorflow-version-tags.whl
 ```
 
 
