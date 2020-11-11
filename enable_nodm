@@ -1,4 +1,4 @@
-- U NEED SSH FOR DIABLE NODM SO BEFORE ENABLE IT SETUP THE SSH WITH ANOTHER MACHINE
+- *U NEED SSH FOR DISABLE NODM SO BEFORE ENABLE IT SETUP THE SSH WITH ANOTHER MACHINE*
 - Nodm allows to run gui app at startup
 
 sudo apt-get -y install nodm matchbox-window-manager
