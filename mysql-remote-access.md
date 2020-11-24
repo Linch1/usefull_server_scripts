@@ -1,4 +1,4 @@
-#MYSQL REMOTE ACCESS
+# MYSQL REMOTE ACCESS
 _use the following steps to configure the remote acces on mysql_
 
 - Create the remote user
