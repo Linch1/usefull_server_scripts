@@ -16,7 +16,9 @@ flush privileges;
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 In the nano editor chenge the following line
-bind-address            = 127.0.0.1 --> **bind-address            = 0.0.0.0**
+`bind-address            = 127.0.0.1` --> **`bind-address            = 0.0.0.0`**
+
+``sudo systemctl restart mysql``
 
 - Allow Server external connections on mysql port ( default: 3306 )
 ```
