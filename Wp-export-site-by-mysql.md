@@ -8,7 +8,7 @@ mysqldump -p -u username database_name > dbname.sql
 sudo mysqldump database_name > dbname.sql
 ```
 
-2. Export wordpress medias ( use filezilla or ssh ) You have to download the path **/var/www/html/wordpress/wp-content/uploads** ( or the interested sub-directories )
+2. Export wordpress medias ( use filezilla or ssh ) You have to download the path **/var/www/path/to/wordpress/wp-content/uploads** ( or the interested sub-directories )
 
 3. Open the dbname.sql and replace all the occurences of `https://oldDomain.com/wordpress-path`( `http://localhost/wordpress-path` if in local development ) with  `https://myNewDomain.com/wordpress-path`
  
@@ -22,4 +22,4 @@ mysql -p -u username database_name < file.sql
 sudo mysql database_name < file.sql 
 ```
 
-5. replace the **upload** ( or the interested sub-directories ) folder in the server with the one that you toke before
+5. replace the **/var/www/path/to/wordpress/wp-content/uploads** ( or the interested sub-directories ) folder in the server with the one that you toke before
