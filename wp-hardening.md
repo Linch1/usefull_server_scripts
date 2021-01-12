@@ -14,12 +14,14 @@ add_filter ('json_jsonp_enabled', '__return_false');
 Add the following code at the end of the `.htaccess`
 
 ```
+# Restrinct wp-config.php
 <Files wp-config.php>
 order allow,deny
 deny from all
 </Files>
 ```
 ```
+# Restrinct .htaccess
 <Files ~ "^.*\.([Hh][Tt][Aa])">
 order allow,deny
 deny from all
@@ -35,6 +37,7 @@ If you get some error reloading the site maybe is for wrong `wp-config.php` file
 ### Restrict ips
 Add the following code at the end of the `.htaccess`
 ```
+# Restrict Ips
 <Limit GET POST PUT>
 order allow,deny
 allow from all
@@ -45,6 +48,7 @@ deny from xxx.xxxx.xxx.xxx
 
 ### Disable File Editing
 ```
+# Disable File Editing
 define('DISALLOW_FILE_EDIT', true);
 ```
 
