@@ -68,6 +68,51 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 
 ### Prevent Username Enumeration
 ```
+# prevent username enumaration
 RewriteCond %{QUERY_STRING} author=d
 RewriteRule ^ /? [L,R=301]
 ```
+
+### Prevent script injection
+```
+# prevent script injection
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|[|%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+```
+### Prevent PHP execution using `.htaccess`. This `.htaccess` files goes in `wp-content/uploads/`.
+```ApacheConf
+# prevent php ecevution
+# Kill PHP Execution
+<Files *.php>
+deny from all
+</Files>
+```
+
+### Disable `xml-rpc.php` if not using mobile app for site management
+```ApacheConf
+# disable xml-rpc.php
+<files xmlrpc.php>
+order allow,deny
+deny from all
+</files>
+```
+
+### Limit Login and Access to `/wp-admin/` to a Specific IP
+```ApacheConf
+# limit login acces to specific ip
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
+	RewriteCond %{REQUEST_URI} ^(.*)?wp-admin(\/)$ [OR]
+	RewriteCond %{REQUEST_URI} ^(.*)?wp-admin/$
+	RewriteCond %{REMOTE_ADDR} !^63\.224\.182\.124$
+	RewriteCond %{REMOTE_ADDR} !^96\.81\.205\.229$
+	RewriteRule ^(.*)$ - [R=403,L]
+</IfModule>
+```
+
+
