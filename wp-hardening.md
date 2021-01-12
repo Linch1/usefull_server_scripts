@@ -2,7 +2,7 @@
 
 Add the following code in your `functions.php`
 
-```
+```ApacheConf
 /******************** 
 DISABLE API
 */
@@ -13,14 +13,14 @@ add_filter ('json_jsonp_enabled', '__return_false');
 ### Restict files `.htaccess` and `wp-config.php`
 Add the following code at the end of the `.htaccess`
 
-```
+```ApacheConf
 # Restrinct wp-config.php
 <Files wp-config.php>
 order allow,deny
 deny from all
 </Files>
 ```
-```
+```ApacheConf
 # Restrinct .htaccess
 <Files ~ "^.*\.([Hh][Tt][Aa])">
 order allow,deny
@@ -36,7 +36,7 @@ If you get some error reloading the site maybe is for wrong `wp-config.php` file
 
 ### Restrict ips
 Add the following code at the end of the `.htaccess`
-```
+```ApacheConf
 # Restrict Ips
 <Limit GET POST PUT>
 order allow,deny
@@ -47,13 +47,13 @@ deny from xxx.xxxx.xxx.xxx
 ```
 
 ### Disable File Editing
-```
+```ApacheConf
 # Disable File Editing
 define('DISALLOW_FILE_EDIT', true);
 ```
 
 ### Disable Access to `wp-includes/`
-```
+```ApacheConf
 # Block wp-includes folder and files
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -67,14 +67,14 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 ```
 
 ### Prevent Username Enumeration
-```
+```ApacheConf
 # prevent username enumaration
 RewriteCond %{QUERY_STRING} author=d
 RewriteRule ^ /? [L,R=301]
 ```
 
 ### Prevent script injection
-```
+```ApacheConf
 # prevent script injection
 Options +FollowSymLinks
 RewriteEngine On
