@@ -42,3 +42,8 @@ deny from 52.90.97.162
 deny from xxx.xxxx.xxx.xxx
 </Limit>
 ```
+
+### Disable File Editing
+```
+define('DISALLOW_FILE_EDIT', true);
+```
