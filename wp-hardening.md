@@ -27,6 +27,11 @@ deny from all
 
 ```
 
+### Move the `wp-config.php` out of the wp directory
+
+just move the `wp-config.php` one level above the wordpress installation and wp will detect it automatically.
+If you get some error reloading the site maybe is for wrong `wp-config.php` file permissions
+
 ### Restrict ips
 Add the following code at the end of the `.htaccess`
 ```
