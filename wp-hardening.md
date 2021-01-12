@@ -26,3 +26,14 @@ deny from all
 </Files>
 
 ```
+
+### Restrict ips
+Add the following code at the end of the `.htaccess`
+```
+<Limit GET POST PUT>
+order allow,deny
+allow from all
+deny from 52.90.97.162
+deny from xxx.xxxx.xxx.xxx
+</Limit>
+```
