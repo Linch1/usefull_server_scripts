@@ -65,3 +65,9 @@ RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
 RewriteRule ^wp-includes/theme-compat/ - [F,L]
 </IfModule>
 ```
+
+### Prevent Username Enumeration
+```
+RewriteCond %{QUERY_STRING} author=d
+RewriteRule ^ /? [L,R=301]
+```
