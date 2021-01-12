@@ -18,6 +18,8 @@ Add the following code at the end of the `.htaccess`
 order allow,deny
 deny from all
 </Files>
+```
+```
 <Files ~ "^.*\.([Hh][Tt][Aa])">
 order allow,deny
 deny from all
