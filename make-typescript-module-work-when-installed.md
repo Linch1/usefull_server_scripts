@@ -26,7 +26,7 @@ export * from "./Types";
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./lib",
+    "outDir": "./src",
     "strict": true
   },
   "include": ["src"],
