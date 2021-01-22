@@ -34,3 +34,5 @@ export * from "./Types";
 }
 ```
 
+4. install the repo `npm i --save git+{REPO-URL}`
+
