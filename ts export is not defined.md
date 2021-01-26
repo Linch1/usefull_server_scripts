@@ -8,6 +8,7 @@ to
     require("./dist/renderer.js");
 </script>
 ```
+3. It may not work at the start, try to reboot few times electron
 
 ### Way 2
 1. Add the following script before importing your custom files
